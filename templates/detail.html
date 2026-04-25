@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post.title }} | Blog App{% endblock %}
+
+{% block content %}
+<div class="hero-shell p-4 p-md-5">
+    <div class="row g-4 align-items-start">
+        <div class="col-lg-8 mx-auto">
+            <p class="text-muted small mb-2">By {{ post.author.username }} on {{ post.created_at|date:"F j, Y, g:i A" }}</p>
+            <h1 class="fw-bold mb-4">{{ post.title }}</h1>
+            {% if post.image %}
+                <img src="{{ post.image.url }}" class="img-fluid rounded-4 shadow-sm mb-4" alt="{{ post.title }}">
+            {% endif %}
+            <div class="fs-5 lh-lg text-secondary">
+                {{ post.content|linebreaks }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
