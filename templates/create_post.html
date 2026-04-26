@@ -6,25 +6,25 @@
 <div class="row justify-content-center">
     <div class="col-lg-8">
         <div class="hero-shell p-4 p-md-5">
-            <h2 class="fw-bold mb-4">Create Post</h2>
+            <h2 class="fw-bold mb-4"><i class="bi bi-plus-circle me-2"></i>Create Post</h2>
             {% if error %}
                 <div class="alert alert-danger">{{ error }}</div>
             {% endif %}
             <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="mb-3">
-                    <label for="title" class="form-label">Title</label>
+                    <label for="title" class="form-label"><i class="bi bi-type-h1 me-1"></i>Title</label>
                     <input type="text" class="form-control form-control-lg" id="title" name="title" required>
                 </div>
                 <div class="mb-3">
-                    <label for="content" class="form-label">Content</label>
+                    <label for="content" class="form-label"><i class="bi bi-textarea-resize me-1"></i>Content</label>
                     <textarea class="form-control" id="content" name="content" rows="8" required></textarea>
                 </div>
                 <div class="mb-4">
-                    <label for="image" class="form-label">Image</label>
+                    <label for="image" class="form-label"><i class="bi bi-image me-1"></i>Image</label>
                     <input type="file" class="form-control" id="image" name="image" accept="image/*">
                 </div>
-                <button type="submit" class="btn btn-success btn-lg">Publish</button>
+                <button type="submit" class="btn btn-success btn-lg"><i class="bi bi-send me-1"></i>Publish</button>
             </form>
         </div>
     </div>

@@ -6,9 +6,12 @@
 <div class="hero-shell p-4 p-md-5 mb-4">
     <div class="row align-items-center g-4">
         <div class="col-lg-8">
-            <p class="text-uppercase text-primary fw-semibold mb-2">Latest stories</p>
-            <h1 class="display-5 fw-bold mb-3">A clean blogging space built with Django and Bootstrap.</h1>
+            <p class="text-uppercase text-primary fw-semibold mb-2"><i class="bi bi-star-fill me-1"></i>Latest stories</p>
+            <h1 class="display-5 fw-bold mb-3 text-gradient">A clean blogging space built with Django and Bootstrap.</h1>
             <p class="lead text-secondary mb-0">Browse posts, read full articles, and publish new content from a simple authenticated workflow.</p>
+        </div>
+        <div class="col-lg-4 text-center">
+            <i class="bi bi-pencil-square display-1 text-primary opacity-75"></i>
         </div>
     </div>
 </div>
@@ -26,9 +29,9 @@
                 {% endif %}
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title fw-bold">{{ post.title }}</h5>
-                    <p class="text-muted small mb-2">By {{ post.author.username }} on {{ post.created_at|date:"F j, Y" }}</p>
+                    <p class="text-muted small mb-2"><i class="bi bi-person-circle me-1"></i>By {{ post.author.username }} on {{ post.created_at|date:"F j, Y" }}</p>
                     <p class="card-text text-secondary flex-grow-1">{{ post.content|truncatewords:25 }}</p>
-                    <a href="{% url 'detail' post.id %}" class="btn btn-primary mt-2">Read More</a>
+                    <a href="{% url 'detail' post.id %}" class="btn btn-primary mt-2"><i class="bi bi-eye me-1"></i>Read More</a>
                 </div>
             </div>
         </div>
